@@ -14,6 +14,8 @@
     <modules>
       <module>netty-combine-4.0</module>
       <module>netty-combine-t</module>
+      <module>netty-server</module>
+      <module>Jupiter</module>
     </modules>
 
 </project>
