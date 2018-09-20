@@ -16,9 +16,12 @@
       <module>netty-combine-4.0</module>
       <module>netty-combine-t</module>
       <module>netty-server</module>
-      <module>Jupiter</module>
       <module>netty-file</module>
       <module>netty-iot</module>
+      <module>netty-rpc</module>
+      <module>netty-container</module>
+      <module>netty-gateway</module>
+      <module>netty-push</module>
     </modules>
 
 </project>

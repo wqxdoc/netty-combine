@@ -13,6 +13,7 @@
 
     <modules>
       <module>iot-push</module>
+      <module>jt808</module>
     </modules>
 
 </project>

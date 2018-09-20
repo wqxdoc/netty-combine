@@ -15,6 +15,9 @@
       <module>chat_netty3</module>
       <module>chat_netty4</module>
       <module>chat_protobuf</module>
+      <module>netty-chat</module>
+      <module>sctalk</module>
+      <module>SBToNettyChat</module>
     </modules>
 
 </project>
