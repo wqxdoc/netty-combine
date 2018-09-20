@@ -12,10 +12,13 @@
 	<url>http://maven.apache.org</url>
 
     <modules>
+      <module>netty-chat</module>
       <module>netty-combine-4.0</module>
       <module>netty-combine-t</module>
       <module>netty-server</module>
       <module>Jupiter</module>
+      <module>netty-file</module>
+      <module>netty-iot</module>
     </modules>
 
 </project>
