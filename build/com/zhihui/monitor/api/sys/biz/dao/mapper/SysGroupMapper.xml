@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>    
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.zhihui.monitor.api.sys.dao.SysGroupMapper">
+	<sql id="Base_Column_List">
+		group_parent_id as groupParentId,group_code as groupCode,group_pcode as groupPcode,group_name as groupName,group_level as groupLevel,group_order as groupOrder,group_tree_path as groupTreePath,group_full_name as groupFullName
+	</sql>
+	  
+     <insert id="create" parameterType="SysGroupEntity">
+     	insert into SYS_GROUP (group_parent_id,group_code,group_pcode,group_name,group_level,group_order,group_tree_path,group_full_name) 
+     	 values(#{groupParentId},#{groupCode},#{groupPcode},#{groupName},#{groupLevel},#{groupOrder},#{groupTreePath},#{groupFullName})
+     </insert>
+
+     <update id="update" parameterType="SysGroupEntity">
+     	update SYS_GROUP set group_parent_id=#{groupParentId},group_code=#{groupCode},group_pcode=#{groupPcode},group_name=#{groupName},group_level=#{groupLevel},group_order=#{groupOrder},group_tree_path=#{groupTreePath},group_full_name=#{groupFullName}
+     	   	where id=#{id}
+     </update>
+
+     <delete id="delete" parameterType="long">
+     	delete from SYS_GROUP where id=#{id}
+     </delete>
+     
+    <select id="getById" parameterType="long" resultType="com.zhihui.monitor.api.sys.entity.SysGroupEntity">  
+        select 
+        <include refid="Base_Column_List" />
+        from SYS_GROUP where id=#{id}
+    </select>
+
+    <select id="findList" parameterType="SysGroupQueryModel" resultType="com.zhihui.monitor.api.sys.entity.SysGroupEntity">
+        select 
+        <include refid="Base_Column_List" /> 
+        from SYS_GROUP
+        <where>
+        	<if test="id!=null">
+        		and id=#{id}
+        	</if>  
+        	
+        </where>
+    </select> 
+</mapper>

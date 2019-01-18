@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>    
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.zhihui.monitor.api.tenant.dao.TenantInfoMapper">
+	<sql id="Base_Column_List">
+		tenant_code as tenantCode,tenant_name as tenantName,tenant_phone as tenantPhone,tenant_email as tenantEmail,tenant_address as tenantAddress
+	</sql>
+	  
+     <insert id="create" parameterType="TenantInfoEntity">
+     	insert into TENANT_INFO (tenant_code,tenant_name,tenant_phone,tenant_email,tenant_address) 
+     	 values(#{tenantCode},#{tenantName},#{tenantPhone},#{tenantEmail},#{tenantAddress})
+     </insert>
+
+     <update id="update" parameterType="TenantInfoEntity">
+     	update TENANT_INFO set tenant_code=#{tenantCode},tenant_name=#{tenantName},tenant_phone=#{tenantPhone},tenant_email=#{tenantEmail},tenant_address=#{tenantAddress}
+     	   	where id=#{id}
+     </update>
+
+     <delete id="delete" parameterType="long">
+     	delete from TENANT_INFO where id=#{id}
+     </delete>
+     
+    <select id="getById" parameterType="long" resultType="com.zhihui.monitor.api.tenant.entity.TenantInfoEntity">  
+        select 
+        <include refid="Base_Column_List" />
+        from TENANT_INFO where id=#{id}
+    </select>
+
+    <select id="findList" parameterType="TenantInfoQueryModel" resultType="com.zhihui.monitor.api.tenant.entity.TenantInfoEntity">
+        select 
+        <include refid="Base_Column_List" /> 
+        from TENANT_INFO
+        <where>
+        	<if test="id!=null">
+        		and id=#{id}
+        	</if>  
+        	
+        </where>
+    </select> 
+</mapper>
