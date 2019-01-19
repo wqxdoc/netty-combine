@@ -22,7 +22,7 @@
       <module>netty-container</module>
       <module>netty-gateway</module>
       <module>netty-push</module>
-      <module>netty-source-code</module>
+      <module>netty-source</module>
     </modules>
 
 </project>
